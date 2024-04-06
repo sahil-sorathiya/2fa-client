@@ -3,6 +3,7 @@ const apiRoutes = require('./routes/api')
 const domainRoutes = require('./routes/domain')
 const authRoutes = require('./routes/auth')
 const otpRoutes = require('./routes/otp')
+const path = require('path');
 const axios = require('axios');
 const cookieParser = require('cookie-parser')
 const express = require('express')
@@ -11,7 +12,7 @@ const { isLoggedIn } = require('./middlewares/isLoggedIn');
 const app = express()
 const port = 3000
 
-app.set('views', './views');
+app.set('views', path.resolve(path.join(__dirname, '/views')));
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false }))
