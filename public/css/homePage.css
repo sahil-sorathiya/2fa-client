@@ -66,10 +66,12 @@ span {
 
 .link-btn {
   background-color: #0e89bf;
+  color: #eee;
   padding: 7px;
   width: 100px;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .menu-icon {
