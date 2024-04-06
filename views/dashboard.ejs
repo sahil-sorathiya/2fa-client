@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css" />
+  </head>
+  <body>
+    <div class="nav-bar">
+      <h1 class="logo-name">Two-Factor Auth</h1>
+      <div class="left-nav">
+        <a href="/apikeys" class="link">Your ApiKeys</a>
+        <a href="/changepassword" class="link">Change Password</a>
+        <button class="btn-nav logout-btn">
+          <a href="/logout" class="link-btn">Logout</a>
+        </button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="name-bar">
+        <h1><%= clientname %></h1>
+      </div>
+      <hr class="hr1" />
+      <div class="container">
+        <div class="div1">
+          <h3>Your Domains</h3>
+        </div>
+        <hr class="hr2" />
+        <div class="wrapper">
+          <div id="wrapper">
+            <button id="domain-btn">Add Domain</button>
+          </div>
+          <% if(errorMessage){ %>
+          <div class="errorMsg">
+            <h3>ERROR!</h3>
+            <p><%= errorMessage %></p>
+          </div>
+          <% } %> 
+          <% for (let i = 0; i < domains.length; i++) { %>
+            <div class="domain-info">
+              <% if(domains[i].verified) { %>
+                <div class="div5">
+                  <h2 class="domain-name"><%= domains[i].domainname %></h2>
+                  <div class="div2">
+                    <p>Verified</p>
+                    <img src="images/check.png" id="check-img" />
+                  </div>
+                </div>
+              <% } else { %>
+              <div class="div5">
+                <h2 class="domain-name"><%= domains[i].domainname %></h2>
+                <div class="div2">
+                  <p>Unverified</p>
+                  <img src="images/cross.png" id="cross-img" />
+                </div>
+              </div>
+              <div class="div5">
+                <div class="div3" id="div3">
+                  <div class="txt-value">
+                    <p id="text">2fa-verification=<%= domains[i].txt %></p>
+                  </div>
+                  <button id="copy-btn">Copy</button>
+                </div>
+              </div>
+              <div class="div5">
+                <div class="div4">
+                  <p id="txt-para">
+                    You have to set this TXT value in your TXT records of your
+                    domain
+                  </p>
+                </div>
+                <form action="/verifydomain" method="post">
+                  <input
+                    type="text"
+                    name="domainname"
+                    id="domaintxtbox"
+                    value="<%= domains[i].domainname %>"
+                  />
+                  <button type="submit" id="verify-btn">Verify Domain</button>
+                </form>
+              </div>
+                <% if(domains[i].domainname == verificationErrorMsg.domainname){ %>
+                  <div class="verifyMsg">
+                    <h3>ERROR!</h3>
+                    <p><%= verificationErrorMsg.message%></p>
+                  </div>
+                <% } %>
+            <% } %>
+          </div>
+          <% } %>
+        </div>
+      </div>
+      <script src="js/dashboard.js"></script>
+      <% if(domains.length != 0){ %>
+      <script>
+        const copyBtn = document.getElementById("copy-btn");
+        copyBtn.addEventListener("click", async (e) => {
+          const text = document.getElementById("text").innerHTML;
+          try {
+            await navigator.clipboard.writeText(text);
+            console.log("Content copied to clipboard");
+            div3.innerHTML += `<p>Copied!</p>`;
+          } catch (err) {
+            console.log("failed");
+            div3.innerHTML += `<p>Copy failed</p>`;
+          }
+        });
+      </script>
+      <% } %>
+    </div>
+  </body>
+</html>

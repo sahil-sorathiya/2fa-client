@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  height: 100vh;
+}
+
+.nav-bar {
+  background-color: #207398;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 15px;
+  width: 100%;
+}
+
+.left-nav {
+  display: flex;
+  gap: 20px;
+  align-content: center;
+  justify-content: center;
+}
+
+.link {
+  margin-top: 7px;
+  text-decoration: none;
+  color: #eee;
+}
+
+.link-btn {
+  text-decoration: none;
+  color: #207398;
+  cursor: pointer;
+}
+
+.btn-nav {
+  text-align: center;
+  width: 150px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #207398;
+  background-color: #eee;
+  text-decoration: none;
+  box-shadow: 0px 4px 10px 1px #00000033;
+  cursor: pointer;
+}
+
+.card {
+  width: 100%;
+  padding: 25px;
+}
+.name-bar {
+  display: flex;
+  justify-content: end;
+}
+
+h1 {
+  padding: 10px;
+}
+
+.hr1 {
+  border: 1px solid rgb(0, 0, 0);
+  width: 100%;
+  margin: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 7px;
+  width: 100%;
+}
+
+.div1 {
+  padding: 0px 5px 7px 10px;
+  font-size: 18px;
+}
+
+.hr2 {
+  border: 1px solid rgba(141, 141, 141, 0.76);
+  margin: 0px 12px 0px 12px;
+}
+
+.wrapper {
+  margin: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+#domain-btn {
+  text-align: center;
+  width: 150px;
+  height: 30px;
+  padding: 5px;
+  border: none;
+  border-radius: 7px;
+  text-decoration: none;
+  background-color: #207398;
+  color: #eeeeee;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#text-box {
+  padding: 5px;
+  width: 250px;
+  height: 30px;
+  border: 1px solid rgb(169, 169, 169);
+  border-radius: 7px;
+}
+
+.domain-name {
+  padding-left: 10px;
+}
+
+#save-btn {
+  padding: 5px;
+  width: 70px;
+  height: 30px;
+  border: 1px solid rgb(169, 169, 169);
+  background-color: #207398;
+  color: #eeeeee;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.domain-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dfdfdf;
+  border-radius: 7px;
+  padding: 10px;
+  gap:10px;
+  margin-bottom: 10px;
+}
+
+.div2 {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 12px;
+  justify-content: space-between;
+}
+
+
+#cross-img {
+  height: 10px;
+  width: 10px;
+}
+
+.div3 {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.txt-value {
+  padding: 10px;
+  border: 1px solid rgb(169, 169, 169);
+  background-color: #ffffff;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+#copy-btn {
+  padding: 5px;
+  width: 70px;
+  height: 30px;
+  border: 1px solid rgb(169, 169, 169);
+  background-color: #207398;
+  color: #eeeeee;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.div4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.div5{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#verify-btn {
+  padding: 5px;
+  width: 110px;
+  height: 35px;
+  border: 1px solid rgb(169, 169, 169);
+  background-color: #207398;
+  color: #eeeeee;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#check-img {
+  height: 10px;
+  width: 10px;
+}
+
+.errorMsg {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(236, 120, 120, 0.767);
+  border: 2px solid rgb(190, 61, 61);
+  padding: 7px;
+  border-radius: 7px;
+}
+
+#domaintxtbox {
+  display: none;
+}
+
+.verifyMsg {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(236, 120, 120, 0.767);
+  border: 2px solid rgb(190, 61, 61);
+  padding: 7px;
+  border-radius: 7px;
+  margin: 0px 12px 12px 12px;
+}

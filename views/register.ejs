@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/register.css" />
+  </head>
+  <body>
+    <div class="nav-bar">
+      <h1 class="logo-name">Two-Factor Auth</h1>
+      <button class="login-btn"><a href="/login" class="link">Login</a></button>
+    </div>
+    <div class="wrapper">
+      <% if(errorArray.length != 0){ %>
+      <div class="error-div">
+        <% errorArray.forEach((error) => { %>
+        <ul>
+          <li><%= error %></li>
+        </ul>
+        <% }) %>
+      </div>
+      <% }%> <% if(successMessage){ %>
+      <div class="msg" id="success">
+        <p><%= successMessage %></p>
+      </div>
+      <% } %> <% if(errorMessage){ %>
+      <div class="msg" id="error">
+        <p><%= errorMessage %></p>
+      </div>
+      <% } %>
+      <div class="container">
+        <h2 class="h1-reg">REGISTER</h2>
+        <hr />
+        <form action="/register" method="post">
+          <div class="combine">
+            <div class="div1">
+              <label> Name</label>
+              <input
+                type="text"
+                class="textBox"
+                id="name"
+                name="fullName"
+                placeholder="Fullname"
+                required
+                autocomplete="off"
+              />
+            </div>
+            <div class="div2">
+              <label> Email ID</label>
+              <input
+                type="text"
+                name="email"
+                class="textBox"
+                id="email"
+                placeholder="abc@example.com"
+                required
+              />
+            </div>
+            <div class="div3">
+              <label> Password</label>
+              <input
+                type="password"
+                name="password"
+                class="textBox"
+                id="password"
+                placeholder="password"
+                required
+              />
+            </div>
+            <div class="combine1">
+              <input type="checkbox" /><label
+                >I Agree to the Privacy Policy</label
+              >
+            </div>
+          </div>
+          <button type="submit" id="regBtn">REGISTER</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

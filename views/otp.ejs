@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/otp.css" />
+    <title>Enter OTP</title>
+  </head>
+  <body>
+    <div class="nav-bar">
+      <h1 class="logo-name">Two-Factor Auth</h1>
+    </div>
+    <div class="wrapper">
+      <% if(errorMsg){ %>
+      <div class="errorMsg">
+        <h3>ERROR!</h3>
+        <p><%= errorMsg %></p>
+      </div>
+      <% } %>
+      <div class="container">
+        <form action="/otp/<%= uuid %>" method="post">
+          <div class="combine">
+            <label>Enter OTP </label>
+            <input
+              type="text"
+              id="otpbox"
+              autocomplete="off"
+              name="otpValue"
+              placeholder="OTP"
+            />
+          </div>
+          <button type="submit" id="submitBtn">SUBMIT</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

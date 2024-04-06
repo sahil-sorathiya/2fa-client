@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="nav-bar">
+      <h1 class="logo-name">Two-Factor Auth</h1>
+      <button class="reg-btn">
+        <a href="/register" class="link">Register</a>
+      </button>
+    </div>
+    <div class="wrapper">
+      <% if(errorArray.length != 0){ %>
+      <div class="error-div">
+        <% errorArray.forEach((error) => { %>
+        <ul>
+          <li><%= error %></li>
+        </ul>
+        <% }) %>
+      </div>
+      <% }%> <% if(successMessage){ %>
+      <div class="msg" id="success">
+        <p><%= successMessage %></p>
+      </div>
+      <% } %> <% if(errorMessage){ %>
+      <div class="msg" id="error">
+        <p><%= errorMessage %></p>
+      </div>
+      <% } %>
+      <div class="container">
+        <h2 class="h1-login">LOGIN</h2>
+        <hr />
+        <form class="form" action="/login" method="post">
+          <div class="combine">
+            <div class="div1">
+              <label>Enter your Email</label>
+              <input
+                type="text"
+                class="textBox"
+                id="email"
+                name="email"
+                value="<%= body.email%>"
+                placeholder="abc@example.com"
+                required
+              />
+            </div>
+            <div class="div2">
+              <label>Enter your Password</label>
+              <input
+                type="password"
+                class="textBox"
+                required
+                id="password"
+                name="password"
+                value="<%= body.password%>"
+                placeholder="password"
+              />
+            </div>
+            <a href="/forgotpassword" class="link">Forgot your password?</a>
+          </div>
+          <button type="submit" id="loginBtn">LOGIN</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
