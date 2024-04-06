@@ -61,6 +61,7 @@ span {
 .nav-btn {
   display: flex;
   gap: 7px;
+  cursor: pointer;
 }
 
 .link-btn {
@@ -123,6 +124,7 @@ h3 {
   font-size: clamp(12px, 1vw + 5px, 36px);
   font-weight: 500;
   align-self: flex-start;
+  cursor: pointer;
 }
 
 .div-img1 {
@@ -172,6 +174,7 @@ h3 {
   border: none;
   border-radius: 5px;
   font-size: clamp(12px, 1vw + 5px, 36px);
+  cursor: pointer;
 }
 
 .right-section2 {

@@ -40,6 +40,7 @@ body {
   font-weight: 600;
   background-color: #eeeeee;
   box-shadow: 0px 4px 10px 1px #00000033;
+  cursor: pointer;
 }
 
 hr {
@@ -145,6 +146,7 @@ form {
   background-color: #207398;
   color: #eeeeee;
   box-shadow: 0px 4px 10px 1px #00000033;
+  cursor: pointer;
 }
 
 @media (max-width: 670px) {
